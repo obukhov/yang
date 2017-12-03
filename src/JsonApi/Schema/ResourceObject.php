@@ -38,7 +38,7 @@ class ResourceObject
     public static function createFromArray(array $array, ResourceObjects $resources): ResourceObject
     {
         $type = isset($array["type"]) && is_string($array["type"]) ? $array["type"] : "";
-        $id = isset($array["id"]) && is_string($array["id"]) ? $array["id"] : "";
+        $id = isset($array["id"]) && is_scalar($array["id"]) ? (string) $array["id"] : "";
         $meta = self::isArrayKey($array, "meta") ? $array["meta"] : [];
         $links = Links::createFromArray(self::isArrayKey($array, "links") ? $array["links"] : []);
         $attributes = self::isArrayKey($array, "attributes") ? $array["attributes"] : [];

@@ -83,7 +83,7 @@ class Relationship
             $resourceMap = [
                 [
                     "type" => $data["type"],
-                    "id" => $data["id"],
+                    "id" => (string) $data["id"],
                 ]
             ];
             if (empty($data["meta"]) === false) {
@@ -108,7 +108,7 @@ class Relationship
             if (empty($item["type"]) === false && empty($item["id"]) === false) {
                 $resource = [
                     "type" => $item["type"],
-                    "id" => $item["id"],
+                    "id" => (string) $item["id"],
                 ];
                 if (empty($item["meta"]) === false) {
                     $resource["meta"] = $item["meta"];
